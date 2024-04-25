@@ -5,10 +5,12 @@
   margin: 0 auto;
   z-index: -5;
   position: relative;
+  width: 37.5rem;
 }
 
 .image {
-  max-width: 430px;
+  max-width: 48rem;
+  height: 10rem;
   align-self: center;
 }
 

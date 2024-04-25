@@ -12,8 +12,7 @@ interface InputProps {
 
 const Input = ({ value }: InputProps) => {
   let icon = drama
-  // if (iconName === 'drama') icon = drama
-  // if (iconName === 'comedy') icon = comedy
+
   switch (value) {
     case 'Drama':
       icon = drama

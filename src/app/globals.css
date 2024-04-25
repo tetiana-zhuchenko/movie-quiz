@@ -3,9 +3,9 @@
   --btn-bg: #40bca3;
   --font-color: #212121;
   --border-color: #d7dcdf;
-
   --base-font: 'Noto Sans', sans-serif;
 
+  --progress-bar-width: 32.7rem;
   --border-radius: 0.8rem;
   --input-border: 0.2rem solid var(--border-color);
 }

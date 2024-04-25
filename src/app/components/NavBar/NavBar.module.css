@@ -1,38 +1,103 @@
-.container {
+.header {
   text-align: center;
-  padding: 10px 0;
+  padding: 5px 0;
   position: absolute;
   top: 10px;
-  width: 100%;
+  width: 32.7rem;
+  height: 3.9rem;
   z-index: 2;
 }
 
-/* * Enable hover only on non-touch devices */
-/* @media (hover: hover) and (pointer: fine) {
-  .card:hover {
-    background: rgba(var(--card-rgb), 0.1);
-    border: 1px solid rgba(var(--card-border-rgb), 0.15);
-  }
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
 
-  .card:hover span {
-    transform: translateX(4px);
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.progress {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+.progressBar {
+  position: relative;
+  width: var(--progress-bar-width);
+  height: 0.4rem;
+  background-color: var(--main-bg);
+  border-radius: var(--border-radius);
+}
+
+.progressBar::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  /* width: var(--progress-bar-width); */
+  height: 0.4rem;
+  width: 0;
+  background-color: var(--btn-bg);
+  border-radius: var(--border-radius);
+}
+
+.progressBarThirty {
+  position: relative;
+  width: var(--progress-bar-width);
+  height: 0.4rem;
+  background-color: var(--main-bg);
+  border-radius: var(--border-radius);
+}
+
+.progressBarThirty::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: var(--progress-bar-width);
+  height: 0.4rem;
+  width: 60%;
+  background-color: var(--btn-bg);
+  border-radius: var(--border-radius);
+}
+
+.progressBarSixty {
+  position: relative;
+  width: var(--progress-bar-width);
+  height: 0.4rem;
+  background-color: var(--main-bg);
+  border-radius: var(--border-radius);
+}
+
+.progressBarSixty::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: var(--progress-bar-width);
+  height: 0.4rem;
+  width: 60%;
+  background-color: var(--btn-bg);
+  border-radius: var(--border-radius);
+}
+
+@media only screen and (min-width: 430px) {
+  .header {
+    width: 35rem;
+    --progress-bar-width: 35rem;
   }
 }
 
-@media (prefers-reduced-motion) {
-  .card:hover span {
-    transform: none;
+@media only screen and (min-width: 786px) {
+  .header {
+    width: 52.8rem;
+    --progress-bar-width: 52.8rem;
   }
-} */
-
-/* Mobile */
-/* @media (max-width: 700px) {
-
-} */
-
-/* Tablet and Smaller Desktop */
-/* @media (min-width: 701px) and (max-width: 1120px) {
-  .grid {
-    grid-template-columns: repeat(2, 50%);
-  }
-} */
+}
