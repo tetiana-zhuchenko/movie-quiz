@@ -1,3 +1,6 @@
+'use client'
+
+import Image from 'next/image'
 import Button from '../components/Button/Button'
 import NavBar from '../components/NavBar/NavBar'
 import Title from '../components/Title/Title'
@@ -7,12 +10,21 @@ const Movies = () => {
   const handleClick = () => {}
   return (
     <main className={styles.main}>
-      <h1>Movies</h1>
-      {/* <NavBar />
-      <div>
-        <Title text={'Enter movie title'} />
+      <NavBar />
+      <div className={styles.movie}>
+        <img
+          alt="Poster"
+          className={styles.image}
+          src={
+            'https://www.bluedogposters.com.au/cdn/shop/products/PP34925_1400x.jpg?v=1674016516} className={styles.image'
+          }
+        />
+        <div className={styles.info}>
+          <Title text={'Movie title'} />
+          <p>1997</p>
+        </div>
       </div>
-      <Button handleClick={handleClick} title={'Complete'} type={'submit'} /> */}
+      <Button handleClick={handleClick} title={'Complete'} type={'submit'} />
     </main>
   )
 }

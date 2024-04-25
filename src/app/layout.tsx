@@ -18,7 +18,12 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <div className={styles.header}>
-          <Image alt="Header background" src={waves} className={styles.image} />
+          <Image
+            alt="Header background"
+            priority
+            src={waves}
+            className={styles.image}
+          />
         </div>
         {children}
       </body>
