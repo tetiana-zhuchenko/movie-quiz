@@ -6,7 +6,7 @@
 
 .container {
   width: 32.7rem;
-  height: 45.8rem;
+  /* height: 45.8rem; */
   display: flex;
   flex-direction: column;
 }
@@ -26,55 +26,22 @@
   justify-content: space-around;
   gap: 1.6rem;
   margin-bottom: 1.6rem;
-}
-
-.inputLabel {
-  border: var(--input-border);
-  border-radius: var(--border-radius);
-  min-width: 32.7rem;
-  width: 100%;
-  min-height: fit-content;
-  min-height: -moz-fit-content;
-  padding: 1.6rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 1.6rem;
-  font-weight: 400;
-}
-
-.genre {
-  display: flex;
-  align-items: center;
-  gap: 1.6rem;
-}
-
-.input {
-  width: 2.4rem;
-  height: 2.4rem;
-  cursor: pointer;
-  accent-color: var(--btn-bg);
-  border-radius: 50%;
-}
-
-.input:checked {
-  border: none;
+  height: 32rem;
+  overflow: scroll;
 }
 
 @media only screen and (min-width: 430px) {
   .container {
     width: 35rem;
+    margin: 15rem 0;
   }
-  .inputLabel {
-    width: 35rem;
+  .inputsWrapper {
+    height: 40rem;
   }
 }
 
 @media only screen and (min-width: 786px) {
   .container {
-    width: 52.8rem;
-  }
-  .inputLabel {
     width: 52.8rem;
   }
 }

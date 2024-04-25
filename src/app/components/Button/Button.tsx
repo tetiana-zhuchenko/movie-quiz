@@ -1,3 +1,5 @@
+import styles from './Button.module.css'
+
 interface ButtonProps {
   handleClick: () => void
   title: string
@@ -6,7 +8,7 @@ interface ButtonProps {
 
 const Button: React.FC<ButtonProps> = ({ handleClick, title, type }) => {
   return (
-    <button type={type} onClick={handleClick}>
+    <button type={type} onClick={handleClick} className={styles.button}>
       {title}
     </button>
   )
