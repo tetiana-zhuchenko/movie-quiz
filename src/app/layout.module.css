@@ -1,0 +1,22 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  z-index: -5;
+  position: relative;
+}
+
+.image {
+  max-width: 430px;
+  align-self: center;
+}
+
+@media only screen and (min-width: 786px) {
+  .header {
+    width: 76.8rem;
+  }
+  .image {
+    max-width: 76.8rem;
+  }
+}
