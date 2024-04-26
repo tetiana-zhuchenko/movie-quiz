@@ -29,6 +29,25 @@
   overflow: scroll;
 }
 
+.containerNotFond {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+.link {
+  display: block;
+  padding: 1.5rem 8rem;
+  border: none;
+  background-color: var(--btn-bg);
+  border-radius: var(--border-radius);
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--main-bg);
+  font-family: var(--base-font);
+}
+
 @media only screen and (min-width: 430px) {
   .container {
     width: 35rem;
@@ -43,6 +62,10 @@
 @media only screen and (min-width: 786px) {
   .container {
     width: 52.8rem;
+  }
+
+  .link {
+    padding: 1.5rem 14rem;
   }
 }
 
