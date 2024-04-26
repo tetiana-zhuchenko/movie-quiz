@@ -13,6 +13,21 @@
   font-weight: 400;
 }
 
+.inputLabelChecked {
+  border: 0.2rem solid var(--btn-bg);
+  border-radius: var(--border-radius);
+  min-width: 32.7rem;
+  width: 100%;
+  min-height: fit-content;
+  min-height: -moz-fit-content;
+  padding: 1.6rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.6rem;
+  font-weight: 400;
+}
+
 .genre {
   display: flex;
   align-items: center;
@@ -36,10 +51,19 @@
     width: 35rem;
     height: 6.4rem;
   }
+
+  .inputLabelChecked {
+    width: 35rem;
+    height: 6.4rem;
+  }
 }
 
 @media only screen and (min-width: 786px) {
   .inputLabel {
+    width: 52.8rem;
+  }
+
+  .inputLabelChecked {
     width: 52.8rem;
   }
 }

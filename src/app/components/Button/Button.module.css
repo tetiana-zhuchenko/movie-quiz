@@ -10,14 +10,32 @@
   font-family: var(--base-font);
 }
 
+.disabledButton {
+  width: 32.7rem;
+  height: 5.6rem;
+  border: none;
+  background-color: var(--btn-disabled-bg);
+  border-radius: var(--border-radius);
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--main-bg);
+  font-family: var(--base-font);
+}
+
 @media only screen and (min-width: 430px) {
   .button {
+    width: 35rem;
+  }
+  .disabledButton {
     width: 35rem;
   }
 }
 
 @media only screen and (min-width: 786px) {
   .button {
+    width: 52.8rem;
+  }
+  .disabledButton {
     width: 52.8rem;
   }
 }

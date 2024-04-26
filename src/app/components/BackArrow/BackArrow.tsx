@@ -11,9 +11,9 @@ const BackArrow = ({ pathname }: { pathname: string }) => {
         <path
           d="M10.9004 4L5.00089 9.8995L10.9004 15.799"
           stroke="#212121"
-          stroke-width="3"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="3"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
       </g>
     </svg>
