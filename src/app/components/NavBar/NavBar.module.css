@@ -62,7 +62,7 @@
   top: 0;
   width: var(--progress-bar-width);
   height: 0.4rem;
-  width: 60%;
+  width: 30%;
   background-color: var(--btn-bg);
   border-radius: var(--border-radius);
 }
@@ -87,6 +87,25 @@
   border-radius: var(--border-radius);
 }
 
+.progressBarFull {
+  position: relative;
+  width: var(--progress-bar-width);
+  height: 0.4rem;
+  background-color: var(--main-bg);
+  border-radius: var(--border-radius);
+}
+
+.progressBarFull::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: var(--progress-bar-width);
+  height: 0.4rem;
+  width: 100%;
+  background-color: var(--btn-bg);
+  border-radius: var(--border-radius);
+}
 @media only screen and (min-width: 430px) {
   .header {
     width: 35rem;

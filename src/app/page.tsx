@@ -6,7 +6,7 @@ import NavBar from './components/NavBar/NavBar'
 import Button from './components/Button/Button'
 import Title from './components/Title/Title'
 import Input from './components/Input/Input'
-import initialGenreList from './data/initialGenreList'
+import { initialGenreList } from './data/initialData'
 import { useState } from 'react'
 import { TGenre } from './types'
 
@@ -25,10 +25,11 @@ const Home = () => {
   const hasCheckedGenre = (genreList: TGenre[]): boolean => {
     return genreList.some((genre) => genre.checked)
   }
+
   const handleSubmit = () => {}
   return (
     <main className={styles.main}>
-      <NavBar />
+      <NavBar thirty={hasCheckedGenre(genreList)} />
       <div className={styles.container}>
         <Title text={'Your favorite movie genre?'} />
         <form className={styles.form} onSubmit={handleSubmit}>

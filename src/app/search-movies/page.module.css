@@ -9,13 +9,25 @@
 .input {
   width: 32.7rem;
   height: 5.6rem;
+  padding-left: 2.4rem;
   margin-top: 4rem;
   border: var(--input-border);
   border-radius: var(--border-radius);
 }
 
-.input::placeholder {
+.invalidInput {
+  width: 32.7rem;
+  height: 5.6rem;
   padding-left: 2.4rem;
+  margin-top: 4rem;
+  border: 0.2rem solid var(--error-color);
+  border-radius: var(--border-radius);
+}
+
+.error {
+  font-size: 1.6rem;
+  margin-top: 2rem;
+  color: var(--error-color);
 }
 
 @media only screen and (min-width: 430px) {
@@ -23,10 +35,17 @@
     width: 35rem;
     height: 6.4rem;
   }
+  .invalidInput {
+    width: 35rem;
+    height: 6.4rem;
+  }
 }
 
 @media only screen and (min-width: 786px) {
   .input {
+    width: 52.8rem;
+  }
+  .invalidInput {
     width: 52.8rem;
   }
 }
