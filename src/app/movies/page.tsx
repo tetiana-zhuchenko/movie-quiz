@@ -1,30 +1,63 @@
 'use client'
 
-import Image from 'next/image'
+import { useEffect, useState } from 'react'
 import Button from '../components/Button/Button'
 import NavBar from '../components/NavBar/NavBar'
-import Title from '../components/Title/Title'
+
 import styles from './page.module.css'
+import { TMovie } from '../types'
+import Movie from '../components/movie/Movie'
 
 const Movies = () => {
+  const [movies, setMovies] = useState<TMovie[]>()
+  const movieTitle =
+    typeof window !== 'undefined' ? window.localStorage.getItem('query') : null
+  const API_KEY = 'a1da5cf1'
+
+  const MOVIES_API = `https://www.omdbapi.com/?s=${movieTitle}&apikey=${API_KEY}`
+
+  const moreThenOne = movies ? movies.length > 1 : false
   const handleClick = () => {}
+
+  useEffect(() => {
+    const fetchMovies = async () => {
+      try {
+        const response = await fetch(MOVIES_API)
+
+        if (!response.ok) {
+          throw new Error('Failed to connect to Server')
+        }
+        const result = await response.json()
+        const movies = result.Search as TMovie[]
+        console.log(movies)
+        setMovies(movies)
+      } catch (err) {
+        console.error(err)
+      }
+    }
+
+    fetchMovies()
+  }, [])
+
   return (
     <main className={styles.main}>
-      <NavBar />
-      <div className={styles.movie}>
-        <img
-          alt="Poster"
-          className={styles.image}
-          src={
-            'https://www.bluedogposters.com.au/cdn/shop/products/PP34925_1400x.jpg?v=1674016516} className={styles.image'
-          }
+      <NavBar full={true} />
+      {movies?.map((m) => (
+        <Movie
+          key={m.imdbID}
+          title={m.Title}
+          year={m.Year}
+          poster={m.Poster}
+          moreThenOne={moreThenOne}
         />
-        <div className={styles.info}>
-          <Title text={'Movie title'} />
-          <p>1997</p>
-        </div>
-      </div>
-      <Button handleClick={handleClick} title={'Complete'} type={'submit'} />
+      ))}
+
+      <Button
+        handleClick={handleClick}
+        title={'Complete'}
+        type={'submit'}
+        disabled
+      />
     </main>
   )
 }

@@ -1,14 +1,10 @@
 'use client'
 
 import { usePathname } from 'next/navigation'
-
 import styles from './NavBar.module.css'
-import file from '../../../../public/icons/Group384.svg'
 import Link from 'next/link'
 import BurgerSvg from '../BurgerSvg/BurgerSvg'
 import BackArrow from '../BackArrow/BackArrow'
-import { initialProgressList } from 'src/app/data/initialData'
-import { useState } from 'react'
 
 interface NavBarProps {
   thirty?: boolean
@@ -18,8 +14,6 @@ interface NavBarProps {
 
 const NavBar = ({ thirty, sixty, full }: NavBarProps) => {
   const pathname = usePathname()
-
-  const quizProgress = thirty || sixty || full
 
   return (
     <header className={styles.header}>

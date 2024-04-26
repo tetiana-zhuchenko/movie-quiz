@@ -14,7 +14,6 @@ const SearchMovies = () => {
   const [inputValue, setInputValue] = useState('')
   const [error, setError] = useState(false)
   const progress = inputValue.length > 0 ? true : false
-  console.log(inputValue)
 
   const handleClick = async () => {
     const trimmedValue = inputValue.trim().toLowerCase()
@@ -24,7 +23,6 @@ const SearchMovies = () => {
       window.localStorage.setItem('query', JSON.stringify(inputValue))
       router.push('/movies')
     } else {
-      console.log('invalid input')
       setError(!error)
     }
   }
@@ -36,9 +34,9 @@ const SearchMovies = () => {
     if (/^[a-zA-Z0-9]+$/.test(trimmedValue)) {
       setError(!error)
       setInputValue(trimmedValue)
+      window.localStorage.setItem('query', JSON.stringify(inputValue))
       router.push('/movies')
     } else {
-      console.log('invalid input')
       setError(!error)
     }
   }
