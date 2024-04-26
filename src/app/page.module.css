@@ -2,11 +2,10 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
+  height: 85vh;
 }
 
 .container {
-  width: 32.7rem;
-  /* height: 45.8rem; */
   display: flex;
   flex-direction: column;
 }
@@ -16,7 +15,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-  padding-top: 2.4rem;
+  padding-top: 1.4rem;
 }
 
 .inputsWrapper {
@@ -37,6 +36,7 @@
   }
   .inputsWrapper {
     height: 40rem;
+    overflow: unset;
   }
 }
 

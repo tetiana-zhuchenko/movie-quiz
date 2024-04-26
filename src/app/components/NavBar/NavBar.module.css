@@ -1,8 +1,7 @@
 .header {
   text-align: center;
-  padding: 5px 0;
   position: absolute;
-  top: 10px;
+  top: 1rem;
   width: 32.7rem;
   height: 3.9rem;
   z-index: 2;
