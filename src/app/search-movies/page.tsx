@@ -1,6 +1,5 @@
 'use client'
 
-import Link from 'next/link'
 import styles from './page.module.css'
 import { useRouter } from 'next/navigation'
 
@@ -29,16 +28,7 @@ const SearchMovies = () => {
 
   const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    const trimmedValue = inputValue.trim().toLowerCase()
-
-    if (/^[a-zA-Z0-9]+$/.test(trimmedValue)) {
-      setError(!error)
-      setInputValue(trimmedValue)
-      window.localStorage.setItem('query', JSON.stringify(inputValue))
-      router.push('/movies')
-    } else {
-      setError(!error)
-    }
+    handleClick()
   }
 
   return (
@@ -69,8 +59,6 @@ const SearchMovies = () => {
         type={'button'}
         disabled={!progress}
       />
-
-      {/* <Link href={'movies'}>to result</Link> */}
     </main>
   )
 }

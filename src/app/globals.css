@@ -1,6 +1,7 @@
 :root {
   --main-bg: #ffffff;
   --btn-bg: #40bca3;
+  --btn-hover: #31a38c;
   --btn-disabled-bg: #40bca39f;
   --font-color: #212121;
   --border-color: #d7dcdf;

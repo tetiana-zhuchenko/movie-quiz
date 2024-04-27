@@ -5,9 +5,3 @@ export const initialGenreList = [
   { id: 4, title: 'Thriller', checked: false },
   { id: 5, title: 'Science fiction', checked: false },
 ]
-
-export const initialProgressList = [
-  { id: 6, title: 'thirty', number: 30, done: false },
-  { id: 7, title: 'sixty', number: 60, done: false },
-  { id: 8, title: 'full', number: 100, done: false },
-]

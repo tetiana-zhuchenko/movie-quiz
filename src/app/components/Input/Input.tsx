@@ -2,13 +2,9 @@
 
 import Image from 'next/image'
 import styles from './Input.module.css'
-import drama from '../../../../public/icons/drama.png'
-import comedy from '../../../../public/icons/comedy.png'
-import action from '../../../../public/icons/action.png'
-import scienceFiction from '../../../../public/icons/scienceFiction.png'
-import thriller from '../../../../public/icons/thriller.png'
 import { ChangeEvent, Dispatch, SetStateAction, useState } from 'react'
 import { TGenre } from 'src/app/types'
+import pickIcon from 'src/app/utils/pickIcon'
 
 interface InputProps {
   value: string
@@ -19,26 +15,7 @@ interface InputProps {
 const Input = ({ value, genreList, setGenreList }: InputProps) => {
   const [isChecked, setIsChecked] = useState(false)
 
-  let icon = drama
-  switch (value) {
-    case 'Drama':
-      icon = drama
-      break
-    case 'Comedy':
-      icon = comedy
-      break
-    case 'Action':
-      icon = action
-      break
-    case 'ScienceFiction':
-      icon = scienceFiction
-      break
-    case 'Thriller':
-      icon = thriller
-      break
-    default:
-      break
-  }
+  const icon = pickIcon(value)
 
   const handleOnChange = (e: ChangeEvent<HTMLInputElement>) => {
     setIsChecked(e.target.checked)

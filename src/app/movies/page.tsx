@@ -3,7 +3,6 @@
 import { useEffect, useState } from 'react'
 import Button from '../components/Button/Button'
 import NavBar from '../components/NavBar/NavBar'
-
 import styles from './page.module.css'
 import { TMovie } from '../types'
 import Movie from '../components/Movie/Movie'
