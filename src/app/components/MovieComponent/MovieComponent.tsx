@@ -10,7 +10,7 @@ interface MovieProps {
   moreThenOne: boolean
 }
 
-const Movie = ({ title, year, poster, moreThenOne }: MovieProps) => {
+const MovieComponent = ({ title, year, poster, moreThenOne }: MovieProps) => {
   return (
     <>
       <div className={moreThenOne ? styles.moviesList : styles.movie}>
@@ -28,4 +28,4 @@ const Movie = ({ title, year, poster, moreThenOne }: MovieProps) => {
   )
 }
 
-export default Movie
+export default MovieComponent

@@ -5,7 +5,7 @@ import Button from '../components/Button/Button'
 import NavBar from '../components/NavBar/NavBar'
 import styles from './page.module.css'
 import { TMovie } from '../types'
-import Movie from '../components/Movie/Movie'
+import MovieComponent from '../components/MovieComponent/MovieComponent'
 import NoMovieFound from '../components/NoMovieFound.tsx/NoMovieFound'
 import { useRouter } from 'next/navigation'
 
@@ -58,7 +58,7 @@ const Movies = () => {
         <>
           <div className={moreThenOne ? styles.moviesListWrapper : ''}>
             {movies?.map((m) => (
-              <Movie
+              <MovieComponent
                 key={m.imdbID}
                 title={m.Title}
                 year={m.Year}
