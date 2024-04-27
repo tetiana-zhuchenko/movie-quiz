@@ -15,7 +15,8 @@ const Movies = () => {
   const movieTitle =
     typeof window !== 'undefined' ? window.localStorage.getItem('query') : null
 
-  const API_KEY = 'a1da5cf1'
+  const API_KEY = process.env.API_KEY
+
   const MOVIES_API = `https://www.omdbapi.com/?s=${movieTitle}&apikey=${API_KEY}`
   const moreThenOne = movies ? movies.length > 1 : false
   const handleClick = () => {}
