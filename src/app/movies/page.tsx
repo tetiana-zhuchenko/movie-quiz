@@ -20,7 +20,7 @@ const Movies = () => {
   const MOVIES_API = `https://www.omdbapi.com/?s=${movieTitle}&apikey=${API_KEY}`
   const moreThenOne = movies ? movies.length > 1 : false
   const handleClick = () => {
-    router.push('/')
+    router.push('./')
   }
 
   useEffect(() => {

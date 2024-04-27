@@ -20,7 +20,7 @@ const SearchMovies = () => {
       setError(!error)
       setInputValue(trimmedValue)
       window.localStorage.setItem('query', JSON.stringify(inputValue))
-      router.push('/movies')
+      router.push('./movies')
     } else {
       setError(!error)
     }

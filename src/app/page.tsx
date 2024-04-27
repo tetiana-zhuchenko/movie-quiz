@@ -16,7 +16,7 @@ const Home = () => {
   const [genreList, setGenreList] = useState(initialGenreList)
 
   const handleClick = () => {
-    router.push('/search-movies')
+    router.push('./search-movies')
   }
 
   const hasCheckedGenre = (genreList: TGenre[]): boolean => {

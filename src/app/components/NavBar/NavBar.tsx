@@ -21,7 +21,7 @@ const NavBar = ({ thirty, sixty, full }: NavBarProps) => {
         <div className={styles.wrapper}>
           <Link
             className={styles.link}
-            href={pathname === '/movies' ? '/search-movies' : '/'}
+            href={pathname === '/movies' ? './search-movies' : './'}
           >
             <BackArrow pathname={pathname} />
           </Link>
