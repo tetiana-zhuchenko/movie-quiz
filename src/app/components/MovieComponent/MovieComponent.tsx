@@ -1,7 +1,7 @@
 'use client'
 
 import Title from '../Title/Title'
-import styles from './Movie.module.css'
+import styles from './MovieComponent.module.css'
 
 interface MovieProps {
   title: string
