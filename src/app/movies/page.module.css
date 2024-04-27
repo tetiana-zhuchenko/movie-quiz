@@ -5,3 +5,27 @@
   justify-content: space-around;
   height: 80vh;
 }
+
+.moviesListWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  height: 80%;
+  width: 95%;
+  overflow-y: scroll;
+  scrollbar-width: thin;
+}
+
+@media only screen and (min-width: 430px) {
+  .moviesListWrapper {
+    height: 80%;
+    width: 35rem;
+  }
+}
+
+@media only screen and (min-width: 786px) {
+  .moviesListWrapper {
+    width: 56rem;
+  }
+}

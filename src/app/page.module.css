@@ -26,7 +26,7 @@
   gap: 1.6rem;
   margin-bottom: 1.6rem;
   height: 32rem;
-  overflow: scroll;
+  overflow-y: scroll;
 }
 
 .containerNotFond {
@@ -55,7 +55,7 @@
   }
   .inputsWrapper {
     height: 40rem;
-    overflow: unset;
+    overflow-y: unset;
   }
 }
 

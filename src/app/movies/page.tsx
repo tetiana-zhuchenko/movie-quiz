@@ -6,20 +6,23 @@ import NavBar from '../components/NavBar/NavBar'
 
 import styles from './page.module.css'
 import { TMovie } from '../types'
-import Movie from '../components/movie/Movie'
+import Movie from '../components/Movie/Movie'
 import NoMovieFound from '../components/NoMovieFound.tsx/NoMovieFound'
+import { useRouter } from 'next/navigation'
 
 const Movies = () => {
+  const router = useRouter()
   const [movies, setMovies] = useState<TMovie[]>()
   const [error, setError] = useState(false)
   const movieTitle =
     typeof window !== 'undefined' ? window.localStorage.getItem('query') : null
 
   const API_KEY = process.env.API_KEY
-
   const MOVIES_API = `https://www.omdbapi.com/?s=${movieTitle}&apikey=${API_KEY}`
   const moreThenOne = movies ? movies.length > 1 : false
-  const handleClick = () => {}
+  const handleClick = () => {
+    router.push('/')
+  }
 
   useEffect(() => {
     const fetchMovies = async () => {
@@ -54,21 +57,23 @@ const Movies = () => {
         <NoMovieFound />
       ) : (
         <>
-          {movies?.map((m) => (
-            <Movie
-              key={m.imdbID}
-              title={m.Title}
-              year={m.Year}
-              poster={m.Poster}
-              moreThenOne={moreThenOne}
-            />
-          ))}
+          <div className={moreThenOne ? styles.moviesListWrapper : ''}>
+            {movies?.map((m) => (
+              <Movie
+                key={m.imdbID}
+                title={m.Title}
+                year={m.Year}
+                poster={m.Poster}
+                moreThenOne={moreThenOne}
+              />
+            ))}
+          </div>
 
           <Button
             handleClick={handleClick}
             title={'Complete'}
             type={'submit'}
-            disabled
+            disabled={false}
           />
         </>
       )}
