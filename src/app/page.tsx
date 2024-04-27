@@ -12,16 +12,13 @@ import { TGenre } from './types'
 
 const Home = () => {
   const router = useRouter()
-  // const [isActive, setIsActive] = useState(false)
+
   const [genreList, setGenreList] = useState(initialGenreList)
-  // const handleClick = () => {
-  //   isActive ? router.push('/search-movies') : null
-  // }
+
   const handleClick = () => {
     router.push('/search-movies')
   }
 
-  console.log(genreList)
   const hasCheckedGenre = (genreList: TGenre[]): boolean => {
     return genreList.some((genre) => genre.checked)
   }

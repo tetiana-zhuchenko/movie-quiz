@@ -10,15 +10,18 @@
 
 .image {
   max-width: 48rem;
-  height: 9rem;
+  height: auto;
+  height: 10rem;
   align-self: center;
 }
 
 @media only screen and (min-width: 786px) {
   .header {
     width: 76.8rem;
+    height: auto;
   }
   .image {
     max-width: 76.8rem;
+    height: auto;
   }
 }

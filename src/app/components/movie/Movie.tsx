@@ -11,7 +11,6 @@ interface MovieProps {
 }
 
 const Movie = ({ title, year, poster, moreThenOne }: MovieProps) => {
-  console.log('moreThenOne', moreThenOne)
   return (
     <>
       <div className={moreThenOne ? styles.moviesList : styles.movie}>
