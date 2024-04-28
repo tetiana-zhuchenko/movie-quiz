@@ -56,7 +56,6 @@ const SearchMovies = () => {
             id="search"
             name="search"
             required
-            pattern="/^[a-zA-Z0-9]+$/"
             placeholder="Movie title here"
             value={inputValue}
             onChange={(e) =>
