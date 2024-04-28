@@ -15,6 +15,22 @@
   border-radius: var(--border-radius);
 }
 
+.input:focus {
+  outline: none;
+}
+
+.input:hover {
+  border-color: var(--btn-bg);
+}
+
+.input:active {
+  border-color: var(--btn-bg);
+}
+
+.input:focus {
+  border-color: var(--btn-bg);
+}
+
 .invalidInput {
   width: 32.7rem;
   height: 5.6rem;
@@ -22,6 +38,25 @@
   margin-top: 4rem;
   border: 0.2rem solid var(--error-color);
   border-radius: var(--border-radius);
+}
+
+.invalidInput:focus {
+  outline: none;
+}
+
+.invalidInput:hover {
+  outline: var(--error-color);
+  /* border-color: var(--error-color); */
+}
+
+.invalidInput:active {
+  outline: var(--error-color);
+  /* border-color: var(--error-color); */
+}
+
+.invalidInput:focus {
+  outline: var(--error-color);
+  /* border-color: var(--error-color); */
 }
 
 .error {

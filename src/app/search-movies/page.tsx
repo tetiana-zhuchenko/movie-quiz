@@ -1,28 +1,39 @@
 'use client'
 
-import styles from './page.module.css'
 import { useRouter } from 'next/navigation'
-
+import { useEffect, useState } from 'react'
 import NavBar from '../components/NavBar/NavBar'
 import Title from '../components/Title/Title'
 import Button from '../components/Button/Button'
-import { useState } from 'react'
+import validate from '../utils/validate'
+
+import styles from './page.module.css'
 
 const SearchMovies = () => {
   const router = useRouter()
   const [inputValue, setInputValue] = useState('')
+  const [validatedValue, setValidatedValue] = useState('')
   const [error, setError] = useState(false)
   const progress = inputValue.length > 0 ? true : false
 
+  useEffect(() => {
+    if (inputValue) {
+      const validatedMovieTitle = validate(inputValue)
+      if (validatedMovieTitle) {
+        setValidatedValue(validatedMovieTitle)
+        setError(false)
+      } else {
+        setError(true)
+      }
+    }
+  }, [inputValue])
+
   const handleClick = async () => {
-    const trimmedValue = inputValue.trim().toLowerCase()
-    if (/^[a-zA-Z0-9]+$/.test(trimmedValue)) {
-      setError(!error)
-      setInputValue(trimmedValue)
-      window.localStorage.setItem('query', JSON.stringify(inputValue))
+    if (!error) {
+      window.localStorage.setItem('query', JSON.stringify(validatedValue))
       router.push('./movies')
     } else {
-      setError(!error)
+      return
     }
   }
 
@@ -38,12 +49,14 @@ const SearchMovies = () => {
         <Title text={'Enter movie title'} />
         <form onSubmit={handleFormSubmit}>
           <label htmlFor="search"></label>
+
           <input
             className={!error ? styles.input : styles.invalidInput}
             type="text"
             id="search"
             name="search"
             required
+            pattern="/^[a-zA-Z0-9]+$/"
             placeholder="Movie title here"
             value={inputValue}
             onChange={(e) =>
