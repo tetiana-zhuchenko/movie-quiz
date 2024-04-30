@@ -1,18 +1,18 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import { useRouter } from 'next/navigation'
 import Button from '../components/Button/Button'
 import NavBar from '../components/NavBar/NavBar'
-import styles from './page.module.css'
-import { TMovie } from '../types'
 import MovieComponent from '../components/MovieComponent/MovieComponent'
 import NoMovieFound from '../components/NoMovieFound.tsx/NoMovieFound'
-import { useRouter } from 'next/navigation'
+import { TMovie } from '../types'
+import styles from './page.module.css'
 
 const Movies = () => {
   const router = useRouter()
   const [movies, setMovies] = useState<TMovie[]>()
-  const [error, setError] = useState(false)
+  const [isError, setIsError] = useState(false)
   const movieTitle =
     typeof window !== 'undefined' ? window.localStorage.getItem('query') : null
 
@@ -42,7 +42,7 @@ const Movies = () => {
         setMovies(movies)
       } catch (err: any) {
         console.error(err)
-        setError(true)
+        setIsError(true)
       }
     }
 
@@ -52,7 +52,7 @@ const Movies = () => {
   return (
     <main className={styles.main}>
       <NavBar full={true} />
-      {error ? (
+      {isError ? (
         <NoMovieFound />
       ) : (
         <>

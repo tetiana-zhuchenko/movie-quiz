@@ -26,7 +26,6 @@ const Input = ({ value, genreList, setGenreList }: InputProps) => {
       return genre
     })
     setGenreList(newGenreList)
-    window.localStorage.setItem(e.target.name, JSON.stringify(e.target.value))
   }
   return (
     <label

@@ -1,14 +1,14 @@
 'use client'
 
-import styles from './page.module.css'
 import { useRouter } from 'next/navigation'
+import { useState } from 'react'
 import NavBar from './components/NavBar/NavBar'
 import Button from './components/Button/Button'
 import Title from './components/Title/Title'
 import Input from './components/Input/Input'
 import { initialGenreList } from './data/initialData'
-import { useState } from 'react'
 import { TGenre } from './types'
+import styles from './page.module.css'
 
 const Home = () => {
   const router = useRouter()
@@ -16,6 +16,10 @@ const Home = () => {
   const [genreList, setGenreList] = useState(initialGenreList)
 
   const handleClick = () => {
+    const checkedGenres = genreList
+      .filter((genre) => genre.checked)
+      .map((genre) => genre.title)
+    window.localStorage.setItem('genres', JSON.stringify(checkedGenres))
     router.push('./search-movies')
   }
 

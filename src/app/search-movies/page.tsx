@@ -13,7 +13,7 @@ const SearchMovies = () => {
   const router = useRouter()
   const [inputValue, setInputValue] = useState('')
   const [validatedValue, setValidatedValue] = useState('')
-  const [error, setError] = useState(false)
+  const [isError, setIsError] = useState(false)
   const progress = inputValue.length > 0 ? true : false
 
   useEffect(() => {
@@ -21,15 +21,15 @@ const SearchMovies = () => {
       const validatedMovieTitle = validate(inputValue)
       if (validatedMovieTitle) {
         setValidatedValue(validatedMovieTitle)
-        setError(false)
+        setIsError(false)
       } else {
-        setError(true)
+        setIsError(true)
       }
     }
   }, [inputValue])
 
   const handleClick = async () => {
-    if (!error) {
+    if (!isError) {
       window.localStorage.setItem('query', JSON.stringify(validatedValue))
       router.push('./movies')
     } else {
@@ -51,7 +51,7 @@ const SearchMovies = () => {
           <label htmlFor="search"></label>
 
           <input
-            className={!error ? styles.input : styles.invalidInput}
+            className={!isError ? styles.input : styles.invalidInput}
             type="text"
             id="search"
             name="search"
@@ -62,7 +62,7 @@ const SearchMovies = () => {
               setInputValue(e.target.value.toLocaleLowerCase().trim())
             }
           />
-          {error && <p className={styles.error}>Invalid input</p>}
+          {isError && <p className={styles.error}>Invalid input</p>}
         </form>
       </div>
       <Button

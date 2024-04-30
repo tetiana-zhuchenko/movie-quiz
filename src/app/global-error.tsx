@@ -1,10 +1,10 @@
 'use client'
 
 import Link from 'next/link'
-import Title from './components/Title/Title'
-import styles from './page.module.css'
-import errImg from '../../public/icons/errImg.svg'
 import Image from 'next/image'
+import Title from './components/Title/Title'
+import errImg from '../../public/icons/errImg.svg'
+import styles from './page.module.css'
 
 export default function GlobalError() {
   return (

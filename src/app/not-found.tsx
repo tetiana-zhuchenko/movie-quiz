@@ -1,8 +1,8 @@
+import Image from 'next/image'
 import Link from 'next/link'
 import Title from './components/Title/Title'
-import styles from './page.module.css'
 import errImg from '../../public/icons/errImg.svg'
-import Image from 'next/image'
+import styles from './page.module.css'
 
 export default function NotFound() {
   return (
